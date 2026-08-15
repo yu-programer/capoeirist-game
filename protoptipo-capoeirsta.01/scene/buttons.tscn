@@ -1,0 +1,85 @@
+[gd_scene format=3 uid="uid://bdt0v6as35nwb"]
+
+[ext_resource type="Texture2D" uid="uid://ctamjdb1p6agt" path="res://assets/UI/Button - PS Directional Arrow Left 2.png" id="1_ir6rc"]
+[ext_resource type="Texture2D" uid="uid://ldy7n5pj6lrr" path="res://assets/UI/Button - PS Directional Arrow Left.png" id="2_hbnxi"]
+[ext_resource type="Texture2D" uid="uid://dq520q606kwbd" path="res://assets/UI/Button - PS Directional Arrow Right 2.png" id="3_7dart"]
+[ext_resource type="Texture2D" uid="uid://mkonj40m0a3u" path="res://assets/UI/Button - PS Directional Arrow Right.png" id="4_juon4"]
+[ext_resource type="Texture2D" uid="uid://gg8u3571gbxo" path="res://assets/UI/Button - PS Square 2.png" id="5_ir6rc"]
+[ext_resource type="Texture2D" uid="uid://b5ut3x3pf522i" path="res://assets/UI/Button - PS Square 1.png" id="6_hbnxi"]
+[ext_resource type="Texture2D" uid="uid://dl4kbo76viydc" path="res://assets/UI/Button - PS Cross 2.png" id="7_7dart"]
+[ext_resource type="Texture2D" uid="uid://bpt4b5m51kx0h" path="res://assets/UI/Button - PS Cross 1.png" id="8_juon4"]
+[ext_resource type="Texture2D" uid="uid://jhk2je3pcir7" path="res://assets/UI/Button - PS Directional Arrow Down 2.png" id="9_xa0v8"]
+[ext_resource type="Texture2D" uid="uid://dwl0ypr77r0q3" path="res://assets/UI/Button - PS Directional Arrow Down.png" id="10_m0ek1"]
+[ext_resource type="Texture2D" uid="uid://d1m28fa4ou1hv" path="res://assets/UI/Button - PS Directional Arrow Up 2.png" id="11_pcoss"]
+[ext_resource type="Texture2D" uid="uid://d4nw5rhqtj2hm" path="res://assets/UI/Button - PS Directional Arrow Up.png" id="12_ebdft"]
+[ext_resource type="Texture2D" uid="uid://drpcxwusxtajt" path="res://assets/UI/Button - PS Circle 1.png" id="13_7dart"]
+[ext_resource type="Texture2D" uid="uid://6es1leggqgui" path="res://assets/UI/Button - PS Circle 2.png" id="14_juon4"]
+[ext_resource type="Texture2D" uid="uid://ddk8tgemad48j" path="res://assets/UI/Button - PS Triangle 1.png" id="15_xa0v8"]
+[ext_resource type="Texture2D" uid="uid://eavp26rw6jth" path="res://assets/UI/Button - PS Triangle 2.png" id="16_m0ek1"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=404502492]
+
+[node name="right" type="TouchScreenButton" parent="." unique_id=698243865]
+modulate = Color(1, 1, 1, 0.39215687)
+position = Vector2(200, 430)
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("1_ir6rc")
+texture_pressed = ExtResource("2_hbnxi")
+action = "ui_right"
+
+[node name="left" type="TouchScreenButton" parent="." unique_id=1891367411]
+modulate = Color(1, 1, 1, 0.39215687)
+position = Vector2(50, 430)
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("3_7dart")
+texture_pressed = ExtResource("4_juon4")
+action = "ui_left"
+
+[node name="square" type="TouchScreenButton" parent="." unique_id=750469880]
+modulate = Color(0.9764706, 0.9764706, 0.9764706, 0.49803922)
+position = Vector2(938, 377)
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("5_ir6rc")
+texture_pressed = ExtResource("6_hbnxi")
+passby_press = true
+action = "ui_square"
+
+[node name="x" type="TouchScreenButton" parent="." unique_id=954827553]
+modulate = Color(0.9764706, 0.9764706, 0.9764706, 0.49803922)
+position = Vector2(1070, 500)
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("7_7dart")
+texture_pressed = ExtResource("8_juon4")
+action = "ui_accept"
+
+[node name="up" type="TouchScreenButton" parent="." unique_id=619779566]
+modulate = Color(1, 1, 1, 0.39215687)
+position = Vector2(125, 340)
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("9_xa0v8")
+texture_pressed = ExtResource("10_m0ek1")
+action = "ui_right"
+
+[node name="down" type="TouchScreenButton" parent="." unique_id=885725424]
+modulate = Color(1, 1, 1, 0.39215687)
+position = Vector2(125, 515)
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("11_pcoss")
+texture_pressed = ExtResource("12_ebdft")
+action = "ui_right"
+
+[node name="circle" type="TouchScreenButton" parent="." unique_id=1685738948]
+modulate = Color(0.9764706, 0.9764706, 0.9764706, 0.49803922)
+position = Vector2(1194, 377)
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("13_7dart")
+texture_pressed = ExtResource("14_juon4")
+action = "ui_circle"
+
+[node name="triangle" type="TouchScreenButton" parent="." unique_id=1856729526]
+modulate = Color(0.9764706, 0.9764706, 0.9764706, 0.49803922)
+position = Vector2(1070, 240)
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("15_xa0v8")
+texture_pressed = ExtResource("16_m0ek1")
+action = "ui_accept"
