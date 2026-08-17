@@ -58,7 +58,7 @@ position = Vector2(125, 340)
 scale = Vector2(0.3, 0.3)
 texture_normal = ExtResource("9_xa0v8")
 texture_pressed = ExtResource("10_m0ek1")
-action = "ui_right"
+action = "ui_up"
 
 [node name="down" type="TouchScreenButton" parent="." unique_id=885725424]
 modulate = Color(1, 1, 1, 0.39215687)
@@ -66,7 +66,7 @@ position = Vector2(125, 515)
 scale = Vector2(0.3, 0.3)
 texture_normal = ExtResource("11_pcoss")
 texture_pressed = ExtResource("12_ebdft")
-action = "ui_right"
+action = "ui_down"
 
 [node name="circle" type="TouchScreenButton" parent="." unique_id=1685738948]
 modulate = Color(0.9764706, 0.9764706, 0.9764706, 0.49803922)

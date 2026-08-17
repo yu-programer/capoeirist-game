@@ -4,8 +4,8 @@ extends CharacterBody2D
 const SPEED = 400.0
 const JUMP_VELOCITY = -600.0
 
-#MLC = meia lua de compasso MLCR = meia lua de compasso rasteira 
-enum State {GINGA, WALK, JUMP, FALL, ARMADA, CROUNCH, MLC, MLCR}
+#MLC = meia lua de compasso MLCR = meia lua de compasso rasteira MTC = mata cachorro
+enum State {GINGA, WALK, JUMP, FALL, ARMADA, CROUNCH, MLC, MLCR, MTC}
 
 var current_state:State = State.GINGA
 var is_square:bool
@@ -13,6 +13,7 @@ var is_circle:bool
 var is_triangle:bool
 var is_crounch:bool
 var is_atacking:bool
+var is_up:bool
 var direction
 
 @onready var animation := $animation as AnimatedSprite2D
@@ -50,6 +51,11 @@ func _physics_process(delta: float) -> void:
 			if animation.frame == animation.sprite_frames.get_frame_count("mlc") -1:
 				is_circle = false
 				is_atacking = false
+		"mata cachorro":
+			if animation.frame == animation.sprite_frames.get_frame_count("mata cachorro") -1:
+				is_square = false
+				is_atacking = false
+				
 	
 	# Add the gravity.
 	if not is_on_floor():
@@ -86,8 +92,13 @@ func update_state(direction) -> void:
 					GlobalVariables.current_atack = GlobalVariables.Type_atack.UP_ATACK
 					print(GlobalVariables.current_atack)
 			elif is_square:
-				current_state = State.ARMADA
-				GlobalVariables.current_atack = GlobalVariables.Type_atack.UP_ATACK
+				if Input.is_action_pressed("ui_up") and animation.animation != "armada":
+					current_state = State.MTC
+					GlobalVariables.current_atack = GlobalVariables.Type_atack.UP_ATACK
+				elif animation.animation != "mata cachorro":
+					current_state = State.ARMADA
+					GlobalVariables.current_atack = GlobalVariables.Type_atack.UP_ATACK
+					
 	else:
 		if velocity.y < 0:
 			current_state = State.JUMP	
@@ -114,6 +125,8 @@ func play_current_state() -> void:
 			animation.play("mlcr")
 		State.MLC:
 			animation.play("mlc")
+		State.MTC:
+			animation.play("mata cachorro")
 
 
 	# Get the input direction and handle the movement/deceleration.
